@@ -41,7 +41,7 @@ public class MapperBenchmarks
     }
 
     [Benchmark]
-    public int MyMapper()
+    public int JustExpression()
     {
         var result = 0;
         var elementMapper = _myMapper.GetMapper<FromValue, OutValue>()!;
@@ -56,7 +56,7 @@ public class MapperBenchmarks
     }
 
     [Benchmark]
-    public int NormalMapper()
+    public int SelfCodeMapper()
     {
         var result = 0;
         // ReSharper disable once LoopCanBeConvertedToQuery
