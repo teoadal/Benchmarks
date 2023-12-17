@@ -79,6 +79,10 @@ public static class Errors
         throw new Exception($"Request pipeline for {request} is not activated");
     }
 
+    public static void EmptyReference()
+    {
+        throw new Exception("Reference is empty");
+    }
 
     public static Exception DependencyNotFound(Type dependencyType)
     {

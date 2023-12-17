@@ -2,7 +2,7 @@
 using System.Buffers;
 using System.Runtime.CompilerServices;
 
-namespace Benchmarks.Mapping;
+namespace Benchmarks;
 
 internal static class CollectionUtils
 {
@@ -51,5 +51,22 @@ internal static class CollectionUtils
         }
 
         array = newArray;
+    }
+
+    public static T[] Shuffle<T>(T[] array, Random random)
+    {
+        var length = array.Length;
+
+        var result = new T[length];
+        Array.Copy(array, result, length);
+
+        var n = length;
+        while (n > 1)
+        {
+            var k = random.Next(n--);
+            (result[n], result[k]) = (result[k], result[n]);
+        }
+
+        return result;
     }
 }

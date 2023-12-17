@@ -1,7 +1,7 @@
-﻿using BenchmarkDotNet.Configs;
-using BenchmarkDotNet.Running;
-using Benchmarks.Mapping;
+﻿using BenchmarkDotNet.Running;
+using Benchmarks.StringBenchmarks;
+using Benchmarks.ValuesBenchmarks;
 
 //BenchmarkSwitcher.FromAssembly(typeof(Program).Assembly).Run(args, new DebugInProcessConfig());
 
-BenchmarkRunner.Run<MapperBenchmarks>();
+BenchmarkRunner.Run<EmptyGuidBenchmarks>();
